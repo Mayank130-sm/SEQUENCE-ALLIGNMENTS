@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENOME ALIGN | Sequence Alignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <main class="glass-container">
+        <header>
+            <div class="logo">
+                GEN<span class="helix-icon">🧬</span>ME ALIGN
+            </div>
+            <p class="subtitle">
+                Global & Local Sequence Alignment (Needleman–Wunsch / Smith–Waterman)
+            </p>
+        </header>
+
+        <div class="grid-layout">
+
+            <!-- INPUT -->
+            <section class="input-section">
+                <h3>Input Sequences</h3>
+
+                <div class="input-group">
+                    <label>Sequence A</label>
+                    <textarea id="dna1" placeholder="GATTACA"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Sequence B</label>
+                    <textarea id="dna2" placeholder="GATCA"></textarea>
+                </div>
+
+                <div class="params-grid">
+                    <div class="param">
+                        <label>Match</label>
+                        <input type="number" id="match" value="1">
+                    </div>
+                    <div class="param">
+                        <label>Mismatch</label>
+                        <input type="number" id="mismatch" value="-1">
+                    </div>
+                    <div class="param">
+                        <label>Gap</label>
+                        <input type="number" id="gap" value="-2">
+                    </div>
+                </div>
+
+                <div class="param">
+                    <label>Alignment Type</label>
+                    <select id="choice">
+                        <option value="0">Global (Needleman–Wunsch)</option>
+                        <option value="1">Local (Smith–Waterman)</option>
+                    </select>
+                </div>
+
+                <button id="alignBtn" onclick="triggerAlignment()">
+                    ALIGN SEQUENCES
+                </button>
+            </section>
+
+            <!-- OUTPUT -->
+            <section class="output-section">
+                <h3>Alignment Output</h3>
+
+                <div class="output-box">
+                    <label>Aligned Sequence A</label>
+                    <pre id="resA" class="res-text">--</pre>
+                </div>
+
+                <div class="output-box">
+                    <label>Aligned Sequence B</label>
+                    <pre id="resB" class="res-text">--</pre>
+                </div>
+
+                <div class="score-display">
+                    Alignment Score: <span id="scoreValue">0</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

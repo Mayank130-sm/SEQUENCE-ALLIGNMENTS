@@ -1,0 +1,95 @@
+:root {
+    --primary-cyan: #00f2ff;
+    --bg-dark: #020b14;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.glass-container {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+header { text-align: center; margin-bottom: 30px; }
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--primary-cyan);
+    text-shadow: 0 0 15px var(--primary-cyan);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+textarea, input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: var(--primary-cyan);
+    padding: 10px;
+    width: 100%;
+}
+
+.params-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-cyan);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 0 20px var(--primary-cyan);
+    transform: translateY(-2px);
+}
+
+.res-text {
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #00ff88;
+}
